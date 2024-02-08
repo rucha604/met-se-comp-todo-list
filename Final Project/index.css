@@ -1,0 +1,275 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+    scroll-behavior: smooth;
+    border-radius: inherit;
+}
+
+::-webkit-scrollbar-track {
+    border-radius: inherit;
+    margin-block: 20px;
+}
+
+::-webkit-scrollbar-thumb {
+    border-radius: inherit;
+    border: 3px solid #e2e2e2;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.container {
+    height: 100vh;
+}
+
+.img-container {
+    width: 95%;
+    border-radius: 18px;
+    overflow: hidden;
+    margin: 30px 40px;
+    height: 50%;
+    background-image: linear-gradient(rgba(0,0,0,0.1), rgba(98, 255, 192, 0.61)),url(./image.jpg);
+    background-size: cover;
+}
+
+.img-container img {
+    width: 100%;
+}
+
+/* TO DO List */
+
+.main {
+    width: 50%;
+    border-radius: 22px;
+    margin: 0 60px;
+    position: absolute;
+    top: 30%;
+    left: 20%;
+}
+
+.upper {
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.upper button {
+    background-color: #367bf5;
+    padding: 6px 14px;
+    outline: none;
+    border: 0;
+    border-radius: 20px;
+    color: white;
+    font-weight: bold;
+    box-shadow: 1px 1px 5px black;
+    transition: 0.2s;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.upper button:hover {
+    background-color: #0a64ff;
+    cursor: pointer;
+}
+
+.upper h3 {
+    color: white;
+    font-size: 2.8rem;
+    letter-spacing: 4px;
+    text-shadow: 0px 0px 6px black;
+}
+
+.task-list {
+    background-color: white;
+    border-radius: 28px;
+    padding: 20px;
+    box-shadow: 2px 2px 8px black;
+    height: fit-content;
+    box-shadow: 0px 0px 10px black;
+    max-height: 400px;
+    overflow-y: scroll;
+}
+
+.task {
+    border-bottom: 1px solid rgb(209, 209, 209);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 14px 20px;
+    transition: 0.1s;
+    transition-property: scale;
+    transition-duration: 1s;
+    scale: 0.9;
+}
+
+.task:hover {
+    background-color: rgba(118, 118, 118, 0.756);
+    scale: 1;
+    border-radius: 16px;
+    border: none;
+}
+
+.task-details h4 {
+    font-size: 1.8rem;
+    display: flex;
+    align-items: center;
+    font-weight: 500;
+}
+
+.task-details p {
+    font-size: 14px;
+    margin: 2px 0;
+}
+
+.delete-button {
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 12px;
+    color: red;
+    padding: 0px 10px;
+    transition: 0.2s;
+}
+
+.delete-button img {
+    transition: 0.1s;
+    width: 30px;
+    border-radius: 50%;
+    border: 1px solid gray;
+}
+
+.delete-button img:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 0px 4px black;
+}
+
+.priority-mark {
+    font-size: 18px;
+    margin: 0 20px;
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-weight: bold;
+    color: white;
+    letter-spacing: 2px;
+}
+
+/* Popup for adding task */
+
+.popup-todo {
+    background: white;
+    width: fit-content;
+    padding: 20px 50px;
+    border-radius: 18px;
+    position: absolute;
+    top: 80%;
+    left: 42%;
+    width: 400px;
+    visibility: hidden;
+    transition: 0.3s;
+    box-shadow: 0px 0px 15px black;
+}
+
+.todo-name {
+    margin: 6px 50px;
+}
+
+.description {
+    margin: 6px 50px;
+}
+
+.todo-priority {
+    margin: 6px 50px; 
+}
+
+#todo-name {
+    padding: 10px 20px;
+    background-color: #dcb4ff;
+    border-radius: 20px;
+    outline: none;
+    border: 2px solid #bf76ff;
+}
+
+#todo-description {
+    padding: 10px 20px;
+    border: 2px solid #bf76ff;
+    background-color: #dcb4ff;
+    border-radius: 20px;
+    resize: none;
+}
+
+#todo-priority {
+    border: 2px solid #bf76ff;
+    padding: 10px 20px;
+    background-color: #dcb4ff;
+    outline: none;
+    border-radius: 20px;
+}
+
+#save-button {
+    background-color: #367bf5;
+    border: none;
+    outline: none;
+    padding: 4px 8px;
+    border-radius: 14px;
+    color: white;
+    font-weight: bold;
+    transition: 0.2s;
+    font-size: 2rem;
+}
+
+#save-button:hover {
+    background-color: #0e66ff;
+}
+
+.save-button {
+    display: flex;
+    justify-content: center;
+    margin-top: 18px;
+}
+
+.input-field-names {
+    color: gray;
+    font-size: 0.8rem;
+    padding: 8px;
+}
+
+/* visibility */
+
+.show-popup {
+    visibility: visible;
+    transform: scale(1);
+    transform: translate(0%, -120%);
+}
+
+.close-popup {
+    visibility: hidden;
+    transform: scale(0.01);
+    transform: translate(0%, -120%);
+}
+
+.task-list > p {
+    text-align: center;
+    font-weight: 500;
+}
+
+i {
+    scale: 2;
+}
+
+/* closing popup */
+.close-button {
+    position: fixed;
+    left: 385px;
+    border-radius: 300%;
+    padding: 10px;
+    top: -10px;
+    border: none;
+    background-color: red;
+    color: white;
+    font-weight: bold;
+}
